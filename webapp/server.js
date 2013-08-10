@@ -2,12 +2,14 @@
 
 var http = require("http");
 
-// we pass createServer an anonymous function to take request and respond with
+// custom onRequest function to take request and respond with
 // "hello world"
-http.createServer(function(request,response){
+function onRequest(request,response){
     response.writeHead(200, {"Content-Type":"text/plain"});
     response.write("Hello world");
     response.end();
-}).listen(8888);
+}
+
+http.createServer(onRequest).listen(8888);
 
 console.log("server listening at http://localhost:8888/");
