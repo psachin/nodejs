@@ -4,14 +4,14 @@ var exec = require("child_process").exec;
 
 function start(response){
     console.log("handler 'start' was called");
-    var content = "empty";
 
-    exec("ls -lah", function(error, stdout, stderr){
+    exec("find /home/sachin/github -type f -iname '*.py'",
+	 {timeout: 1000, maxBuffer: 20000*24 }, 
+	 function(error, stdout, stderr){
 	response.writeHead(200, {"Content-Type":"text/plain"});
 	response.write(stdout);
 	response.end();
     });
-    return content;
 }
 
 function upload(response){
