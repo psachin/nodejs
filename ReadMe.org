@@ -1,3 +1,10 @@
 ** Simple webapp written in [[https://github.com/joyent/node][Node.js]]
 
+** Usage
+   
+   Install node.js and run
+
+   #+BEGIN_SRC bash
+   node index.js
+   #+END_SRC   s
 
