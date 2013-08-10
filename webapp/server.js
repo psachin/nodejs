@@ -11,10 +11,7 @@ function start(route, handle) {
 	// after http://localhost:8888/<pathname>
 	console.log("Request for " + pathname + " received");
 	
-	response.writeHead(200, {"Content-Type":"text/plain"});
-	var content = route(handle, pathname);
-	response.write(content);
-	response.end();
+	content = route(handle, pathname, response);
     }
     http.createServer(onRequest).listen(8888);
     console.log("server listening at http://localhost:8888/");
