@@ -1,0 +1,3 @@
+[submodule "formidable"]
+	path = formidable
+	url = git://github.com/felixge/node-formidable.git
